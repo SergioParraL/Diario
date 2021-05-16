@@ -1,2 +1,0 @@
-# Diario
-Aprendiendo JavaScript
