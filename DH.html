@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Sergio Parra | Daily Health</title>
+	<link rel="stylesheet" href="css/DH_css.css">
+	<link rel="shortcut icon" href="../../imagenes/icono.ico">
+	<script type="text/javascript" src="js.js"></script>
+</head>
+<body>
+	<div>
+		<header id="header" class="">
+			<section>
+				<span class="logo"><img src="display/..svg" alt="logo"></span>
+				<nav>
+					<li><button onclick='mostrar()'> Nuevo</button></li>
+					<li>
+						<a id='link' href="#" title="">
+							<button>Entradas</button>
+						</a>
+					</li>
+					<li><button id='remove'>Eliminar</button></li>
+				</nav>
+				<div id='obj1'>
+					<h1 class="wrapper">Crea una Nueva Entrada</h1>
+					<div>
+						<img id='cerrar' class="img" src="display/eliminar.png" alt="salir" onclick="ocultar()">
+					</div>
+					<form id="formulario" action="#" method="POST" Id='New_Entra' name='formulario'>
+						<section class="wrapper">
+
+							<input id='title' class="input camp" type="text" name="titulo" placeholder="Titulo">
+							<input class="input camp" type="text" name="animo" id="animo" placeholder="Estado de Ánimo">
+						</section>
+						<section class="wrapper">
+								<textarea id='descripcion' class="camp" name='descripcion' cols='30' rows="5"></textarea>
+						</section>
+						<section class="wrapper">
+							<input id="date" class="input camp" type="date" name="date">
+							<button id="submit" class="input camp" type="button" name="enviar" Value="Enviar" onclick='ocultar()'>Enviar</button>
+						</section>
+					</form>
+				</div>
+			</section>
+		</header><!-- /header -->
+		<article class="content">
+			<section id='select' class="row_1">	
+				<div>
+
+				<h1 id='h1'>Tabla de Contenido</h1>
+				<table id='table' class="table">
+					<tr class="header_Table">
+						<th>E</th>
+						<th>Titulo</th>
+						<th>Fecha</th>
+						<th>Animo</th>
+					</thead>
+				</table>
+				</div>
+			</section>
+			<section class="row_2">
+				<h1 id='cont' >0</h1>
+			</section>
+		</article>
+		<footer>
+			<ul>
+				<li><a href="#" title="">GitHub</a></li>
+				<li><a href="../../index.html">Contacto</a></li>
+				<li><a href="../Portfolio.html">Proyectos</a></li>
+			</ul>
+		</footer>
+	</div>
+
+	<script type="text/javascript">
+		let cont = 0
+		let event = document.getElementById('submit')
+		event.addEventListener('click',obtenerDatos, true)
+		event.addEventListener('click',add)
+
+		let rem = document.getElementById('remove')
+		rem.addEventListener('click',removeItem,false)
+
+		let link = document.getElementById('link')
+		link.addEventListener('click',lol)
+
+		function lol(){
+			alert('Este Boton está en CoNsTRucCiON')
+		}
+	</script>
+
+</body>
+</html>
