@@ -26,19 +26,18 @@
 					<div>
 						<img id='cerrar' class="img" src="display/eliminar.png" alt="salir" onclick="ocultar()">
 					</div>
-					<form id="formulario" action="#" method="POST" Id='New_Entra' name='formulario'>
-						<section class="wrapper">
-
+					<form id="formulario" method="POST" Id='New_Entra' name='formulario'>
+						<div class="wrapper">
 							<input id='title' class="input camp" type="text" required  name="titulo" placeholder="Titulo">
-							<input class="input camp" type="text" name="animo" id="animo" placeholder="Estado de Ánimo" required>
-						</section>
-						<section class="wrapper">
-								<textarea id='descripcion' class="camp" name='descripcion' cols='30' rows="5"></textarea>
-						</section>
-						<section class="wrapper">
+							<input type="text" name="animo" id="animo" class="input camp" placeholder="Estado de Ánimo" required>
+						</div>
+						<div class="wrapper">
+								<textarea id='descripcion' class="camp" name='descripcion' cols='30' rows="5" required></textarea>
+						</div>
+						<div class="wrapper">
 							<input id="date" class="input camp" type="date" name="date" required>
-							<button id="submit" class="input camp" type="button" name="enviar" Value="Enviar" onclick='ocultar()'>Enviar</button>
-						</section>
+							<button id="submit" class="input camp" type="submit" name="enviar" Value="Enviar" onclick='ocultar()'>Enviar</button>
+						</div>
 					</form>
 				</div>
 			</section>
@@ -71,25 +70,7 @@
 			</ul>
 		</footer>
 	</div>
-<!-- <form action="actualizar.html" method="POST">
-			<div>
-				<label for="decir"></label>
-				<input type="text" name="decir" id="decir" value="hola">
-			</div>
-			<div>
-				<label for="para"></label>
-				<input type="text" name="para" id="para">
-			</div>
-			<div>
-				<input type="checkbox" class=""> </input>
-				<input type="checkbox" class=""> </input>
-				<input type="checkbox" class=""> </input>
-				<input type="checkbox" class=""> </input>
-			</div>
-			<div>
-				<button>send</button>
-			</div>
-		</form> -->
+
 	<script type="text/javascript">
 		let cont = 0
 		let event = document.getElementById('submit')

@@ -14,6 +14,9 @@ function obtenerDatos(){
 	date = document.getElementById('date').value
 	arr = [title, animo, date]
 
+	if(arr[0] == "" ||arr[1] == "" || arr[2] == "" ){
+		return alert('Debe rellenar todos los campos')
+	}
 	let table = document.getElementById('table')
 
 	let tr = document.createElement('tr')
