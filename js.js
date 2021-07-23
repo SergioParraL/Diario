@@ -1,4 +1,4 @@
-
+// candidates@southteams.com
 function mostrar() {
 	document.getElementById('obj1').style.display = 'block'
 	document.getElementById('obj1').style.position = 'fixed'
@@ -7,10 +7,6 @@ function mostrar() {
 function ocultar() {
 	document.getElementById('obj1').style.display = 'none'
 }
-
-
-// let resultados
-let title, animo, date,arr=[] //variables globales
 
 function obtenerDatos(){
 	title = document.getElementById('title').value
@@ -21,7 +17,7 @@ function obtenerDatos(){
 	let table = document.getElementById('table')
 
 	let tr = document.createElement('tr')
-
+	tr.classList.add('tr')
 	let td_0 = document.createElement('td') //CheckBox
 	let td = document.createElement('td')
 	let td_1 = document.createElement('td')
@@ -44,35 +40,46 @@ function obtenerDatos(){
 	table.appendChild(tr)
 
 	document.getElementById('formulario').reset()
+	add()
 }
 
+function removeItem(){
+	let del
+	let checkbox = document.querySelectorAll('.check') 
+	let tr = document.querySelectorAll('.tr')
+	let list = validateCheck(checkbox)
+	if (list == null || list.length == 0){
+		return(alert('Para Borrar un Registro, debes Seleccionarlo primero'))
+	}
+
+	else {
+		for(let i = 0 ; i < list.length; i++){
+			del = list[i]
+			tr[del].remove() 
+		}
+		decrement()
+	}
+}
+
+
+
+function validateCheck (list) {
+	let listValidate = []
+	let j = list
+	if (j.length == 0) return null
+	for (let i = 0; i < j.length; i++) {
+		if (j[i].checked)listValidate.push([i])
+	}
+	return listValidate
+}
 
 function add() {
 	cont++
 	let h1 = document.getElementById('cont')
 	h1.firstChild.nodeValue = cont
 }
-
-function removeItem(){
-
-	let select, no = 0
-	let check = document.getElementById('table')
+function decrement () { 
+	cont--
 	let h1 = document.getElementById('cont')
-	let contador = table.childElementCount
-	
-	if (cont == 0) alert('No puedes Eliminar algo que no EXISTE')
-
-	for (var i = 1; i < contador + 1; i++) {
-		select = table.childNodes[i].childNodes[0].childNodes[0]
-		if (select.checked == true) {
-			select = table.childNodes[i]
-			select.parentNode.removeChild(select)
-			cont--
-			h1.firstChild.nodeValue = cont
-			no++
-		}
-	}
-	if (contador > 1 && no == 0) alert('Para eliminar, debes Seleccionar')
-	// return lista	s
+	h1.firstChild.nodeValue = cont
 }
-
