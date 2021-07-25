@@ -7,18 +7,17 @@
 	<link rel="shortcut icon" href="../../imagenes/icono.ico">
 	<script type="text/javascript" src="js.js"></script>
 </head>
+<!-- https://sergioparral.github.io/Diario/ -->
 <body>
 	<div>
 		<header id="header" class="">
 			<section>
-				<span class="logo"><img src="display/aperture-outline.svg" alt="logo"></span>
+				<span class="logo">
+					<img src="display/aperture-outline.svg" alt="logo">
+				</span>
 				<nav>
 					<li><button onclick='mostrar()'> Nuevo</button></li>
-					<li>
-						<a id='link' href="actualizar.html" title="">
-							<button>Actualizar</button>
-						</a>
-					</li>
+					<li><button id='update'>Actualizar</button></li>
 					<li><button id='remove'>Eliminar</button></li>
 				</nav>
 				<div id='obj1'>
@@ -36,7 +35,7 @@
 						</div>
 						<div class="wrapper">
 							<input id="date" class="input camp" type="date" name="date" required>
-							<button id="submit" class="input camp" type="submit" name="enviar" Value="Enviar" onclick='ocultar()'>Enviar</button>
+							<button id="submit" class="input camp" type="submit" name="enviar" Value="Enviar">Enviar</button>
 						</div>
 					</form>
 				</div>
@@ -45,42 +44,68 @@
 		<article class="content">
 			<section id='select' class="row_1">	
 				<div>
-
-				<h1 id='h1'>Tabla de Contenido</h1>
-				<table id='table' class="table">
-					<tr class="header_Table">
-						<th>E</th>
-						<th>Titulo</th>
-						<th>Fecha</th>
-						<th>Animo</th>
-					</tr>
-				</table>
+					<h1 id='h1'>Tabla de Contenido</h1>
+					<table id='table' class="table">
+						<tr class="header_Table">
+							<th id="box">E</th>
+							<th>Titulo</th>
+							<th>Fecha</th>
+							<th>Mensaje</th>
+							<th>Animo</th>
+						</tr>
+					</table>
 				</div>
 			</section>
 			<section class="row_2">
 				<h1 id='cont' >0</h1>
 			</section>
 		</article>
-
+		<div id="DivFomrUp" class="contentH">
+			<div>
+				<h1 class="wrapper">Actualiza tus Datos</h1>
+				<img id='close' class="img" src="display/eliminar.png" alt="salir">
+			</div>
+			<form id="formUpdate" method="POST" Id='New_Entra' name='formulario'>
+				<div class="wrapperU">
+					<input id='title' class="input camp" type="text"  name="titulo" placeholder="Titulo">
+					<input type="text" name="animo" id="animo" class="input camp" placeholder="Estado de Ánimo" >
+				</div>
+				<div class="wrapperU">
+						<textarea id='descripcion' class="camp" name='descripcion' cols='30' rows="5" ></textarea>
+				</div>
+				<div class="wrapperU">
+					<input id="date" class="input camp" type="date" name="date">
+					<button id="updateB" class="input camp" name="enviar" Value="Enviar">Enviar</button>
+				</div>
+			</form>
+		</div>
 		<footer>
 			<ul>
 				<li><a href="https://github.com/SergioParraL" title="" target="_blank">GitHub</a></li>
-				<li><a href="#">Contacto</a></li>
-				<li><a href="https://sergioparral.github.io/Home/" target="_blank">Proyectos</a></li>
+				<li><a href="https://sergioparral.github.io/PortFolio/">Contacto</a></li>
+				<li><a href="https://sergioparral.github.io/Home/">Proyectos</a></li>
 			</ul>
 		</footer>
 	</div>
 
 	<script type="text/javascript">
-		let cont = 0
+		let submit = document.querySelector('#submit')
+		submit.addEventListener('click',ocultar)
+
 		let event = document.getElementById('submit')
 		event.addEventListener('click',obtenerDatos, true)
 
 		let rem = document.getElementById('remove')
 		rem.addEventListener('click',removeItem,false)
 
-		// let link = document.getElementById('link')
-		// link.addEventListener('click',update)
+		let link = document.getElementById('update')
+		link.addEventListener('click', getData)
+
+		let close = document.querySelector('#close')
+		close.addEventListener('click',closeEv)
+
+		let updateB = document.querySelector('#updateB')
+		updateB.addEventListener('click',cierre)
 
 	</script>
 

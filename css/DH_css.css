@@ -22,6 +22,10 @@
 	height: 5.4em;
 	}
 
+	.header_Table #box{
+		width: 1em;
+	}
+
 
 	.content, nav li button, footer{
 		font-size: 140%;
@@ -105,7 +109,9 @@
 	/*-------Row_1----------------------------*/
 
 		article .row_1{
-			width: 70%;
+			/* width: 70%; */
+			width: 60%;
+			margin-left: 10%;
 		}
 
 		.table {
@@ -113,12 +119,14 @@
 		  border: 1px solid #000;
 		  border-collapse: collapse;
 		  margin-block-end:5em;
+		  table-layout: fixed;
 		  /* display: none;*/
 		}
 		 
 		.table th, .table td {
 		  border: 1px solid #000;
 		  padding: .4em;
+			   word-wrap:break-word;
 		}
 
 	/*-------Row_2----------------------------*/
@@ -151,7 +159,7 @@
 		border: 1px solid white;
 	}
 
-	#obj1 .wrapper{
+	#obj1 .wrapper, h1.wrapper{
 		margin: 2% 0;
 		width: 100%;
 		display: inline-flex;
@@ -159,7 +167,7 @@
 		font-size: 280%;
 	}
 
-	#obj1 .input{
+	#obj1 .input, .contentU .input{
 		padding: 2%;
 		width: 30%;
 		border: none;
@@ -190,4 +198,34 @@
 		float: right;
 	}
 
+/* ----------Fomulario Actualización--------- */
 
+	#DivFomrUp form > *{
+		/* border: 3px solid red; */
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		padding: .3em;
+	}	
+
+	#DivFomrUp{
+		/* display: none; */
+		width: 70%;
+		position: fixed;
+		top: 4%;
+		left: 10%;
+		background-color: rgba(50, 194, 254, .7);
+		padding: 0 2em 2em 2em;
+		border-radius: 1em;
+		border: 1px solid rgb(220, 226, 243)
+		/* display: flex; */
+	}
+
+	#formUpdate wrapperU{
+		/* display: flex; */
+		/* padding: .3em; */
+	}
+
+	.contentH{
+		display: none;
+	}
