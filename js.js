@@ -1,4 +1,3 @@
-// candidates@southteams.com
 function mostrar() {
 	document.getElementById('obj1').style.display = 'block'
 	document.getElementById('obj1').style.position = 'fixed'
@@ -123,6 +122,7 @@ function getData () {
 	else {
 		let p = update(list) // saca el valor del array en la posicion 0
 		let q = tr[p].childNodes // selecciona el tag tr con el indice p
+		
 		//Itera sobre el tag seleccionado
 		//Agrega al array los valores seleccionados
 		for (var i = 1; i < q.length; i++) {
@@ -156,7 +156,6 @@ function cierre (event) {
 	let checkbox = document.querySelectorAll('.check')
 	let list = validateCheck(checkbox)
 	let w = checkbox[list].parentNode.parentNode
-	// console.log(w.childNodes[0])
 	let val = [''], h
 	let form = document.querySelector('#formUpdate') //formulario de Update
 	for (let i = 0; i <= 4; i++) {
@@ -164,12 +163,6 @@ function cierre (event) {
 		w.childNodes[i].textContent = val[i]
 		console.log(val)
 	}
-
-
-
 	w.childNodes[0].innerHTML = '<input type="checkbox" class="check"> </input>'
-	// for (let j = 1; j < w.length; j++) {
-	// 	alert('entrando')
-	// }
 	closeEv()
 }
